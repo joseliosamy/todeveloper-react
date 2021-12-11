@@ -8,6 +8,7 @@ export const Site = styled.div`
   min-height: 100vh;
   background-color: ${colorSchemma.colorPrimary};
   color: #d0d0d0;
+  padding-top: 70px;
 `;
 
 export const Delimiters = styled.div`

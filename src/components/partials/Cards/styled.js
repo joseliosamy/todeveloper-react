@@ -75,4 +75,19 @@ export const CardList = styled.div`
       box-shadow: 0 0 5px ${colorSchemma.textHeaderOne};
     }
   }
+  @media (max-width: 900px) {
+    .card {
+      max-width: 500px;
+      .cardView {
+        bottom: -80%;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .card {
+      .cardView {
+        bottom: -60%;
+      }
+    }
+  }
 `;

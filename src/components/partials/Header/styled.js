@@ -6,8 +6,12 @@ const { colorSchemma } = ui;
 export const HeaderArea = styled.header`
   width: 100%;
   height: 70px;
+  position: fixed;
+  top: 0;
   border-bottom: 1px solid #d1d1d11f;
-  background-color: #00000044;
+  backdrop-filter: blur(5px);
+  z-index: 2;
+  background-color: #00000099;
   nav {
     width: 80%;
     height: 100%;
@@ -71,6 +75,9 @@ export const HeaderArea = styled.header`
         }
       }
     }
+    .menu {
+      display: none;
+    }
     & > a {
       padding: 12px 22px;
       border: 1px solid #bbb;
@@ -83,6 +90,63 @@ export const HeaderArea = styled.header`
         color: ${colorSchemma.textHeaderOne};
         border-color: ${colorSchemma.textHeaderOne};
         background-color: #23163f;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    nav {
+      div {
+        ul {
+          width: 30%;
+          height: calc(100vh - 70px);
+          position: fixed;
+          top: 70px;
+          right: -30%;
+          flex-direction: column;
+          background-color: #000000dd;
+          backdrop-filter: blur(5px);
+          z-index: 2;
+          transition: 550ms ease;
+          border-left: 1px solid #d1d1d11f;
+          border-top-left-radius: 38px;
+          &.enable {
+            right: 0;
+          }
+          li {
+            a {
+              padding: 25px 15px;
+            }
+          }
+        }
+        & + a {
+          display: none;
+        }
+      }
+      .menu {
+        width: 28px;
+        height: 28px;
+        display: flex;
+        svg {
+          cursor: pointer;
+          width: 100%;
+          .rows {
+            fill: ${colorSchemma.textHeaderColor};
+            transition: 100ms ease;
+          }
+        }
+        &:hover .rows {
+          fill: #bbbbbb55;
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    nav {
+      div {
+        ul {
+          width: 60%;
+          right: -60%;
+        }
       }
     }
   }
