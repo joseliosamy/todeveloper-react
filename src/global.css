@@ -6,12 +6,11 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+sk{
+  color: #0c0c0c;
+}
 html{
   font-family: 'Manrope', sans-serif;
-}
-body{
-  overflow: hidden;
 }
 a{
   text-decoration: none;
@@ -29,3 +28,16 @@ ul{
     opacity: 1;
   }
 }
+@keyframes cardsLoading{
+  0%{
+    background-color: #0c0c0c;
+  }
+  50%{
+    background-color: #161616;
+  }
+  100%{
+    background-color: #0c0c0c;
+  }
+
+}
+

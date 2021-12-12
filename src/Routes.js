@@ -8,6 +8,7 @@ import Home from './pages/Home';
 
 // pages
 import About from './pages/Sobre';
+import Events from './pages/Eventos';
 
 function Routes() {
   return (
@@ -15,13 +16,17 @@ function Routes() {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route path="/sobre">
+      <Route exact path="/sobre">
         <About />
       </Route>
 
-      <Route path="/eventos">Eventos</Route>
+      <Route exact path="/eventos">
+        <Events />
+      </Route>
 
-      <Route path="/ferramentas">Ferramentas</Route>
+      <Route exact path="/ferramentas">
+        Ferramentas
+      </Route>
 
       <Route path="*">Erro 404.</Route>
     </Switch>
