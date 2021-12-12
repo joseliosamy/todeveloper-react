@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { CardList } from './styled';
+import CardsLoading from '../Loading/CardsLoading';
 
 function Cards() {
   const [loading, setLoading] = useState(true);
@@ -15,26 +16,27 @@ function Cards() {
       .catch(() => console.log('erro'))
       .finally(() => setLoading(false));
   }, []);
-  console.log(loading);
-  console.log(date);
 
   return (
-    <CardList>
-      {date.map((item, id) => {
-        return (
-          <Link className="card" to={item.redirectURL} key={id}>
-            <div className="cardBanner">
-              <img src={item.bannerURL} alt="banner" />;
-            </div>
+    <>
+      <CardList>
+        {date.map((item, id) => {
+          return (
+            <Link className="card" to={item.redirectURL} key={id}>
+              <div className="cardBanner">
+                <img src={item.bannerURL} alt="banner" />;
+              </div>
 
-            <div className="cardView">
-              <h2 key={id}>{item.eventName}</h2>
-              <span>Ver+</span>
-            </div>
-          </Link>
-        );
-      })}
-    </CardList>
+              <div className="cardView">
+                <h2 key={id}>{item.eventName}</h2>
+                <span>Ver+</span>
+              </div>
+            </Link>
+          );
+        })}
+      </CardList>
+      <CardsLoading fetchAPI={loading} />
+    </>
   );
 }
 export default Cards;

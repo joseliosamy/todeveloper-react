@@ -15,7 +15,7 @@ function Header() {
         <nav>
           <div>
             <Link to="/">
-              <img src={imgLogo} />
+              <img src={imgLogo} alt="MenuHamburguer" />
             </Link>
             <ul className={menu}>
               <li>
