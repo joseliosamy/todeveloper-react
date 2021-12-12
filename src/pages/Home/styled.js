@@ -4,12 +4,16 @@ export const HomeArea = styled.div`
   min-height: calc(100vh - 70px);
   display: flex;
   align-items: center;
-  justify-content: end;
   flex-direction: column;
   animation: fade_in 0.7s ease-in-out;
+  position: relative;
+  align-items: center;
+  justify-content: end;
   h1 {
     font-size: 4rem;
+    text-align: center;
     margin-bottom: 15px;
+    z-index: 1;
   }
   a {
     color: #fff;
@@ -43,6 +47,23 @@ export const HomeArea = styled.div`
       margin-bottom: -5px;
       width: 100%;
       height: 100%;
+    }
+  }
+  @media (max-width: 900px) {
+    justify-content: center;
+    h1 {
+      font-size: 3rem;
+    }
+    > div {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      bottom: 0;
+      justify-content: center;
+      video {
+        width: 200%;
+        margin: 0 auto;
+      }
     }
   }
 `;

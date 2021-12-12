@@ -9,6 +9,7 @@ export const Site = styled.div`
   background-color: ${colorSchemma.colorPrimary};
   color: #d0d0d0;
   padding-top: 70px;
+  overflow-x: hidden;
 `;
 
 export const Delimiters = styled.div`

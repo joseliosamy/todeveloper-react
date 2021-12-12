@@ -21,6 +21,7 @@ export const CardList = styled.div`
     position: relative;
     overflow: hidden;
     transition: 200ms ease;
+    text-decoration: none;
     .cardBanner {
       width: 100%;
       img {
