@@ -2,6 +2,8 @@ import styled from 'styled-components';
 
 export const HomeArea = styled.div`
   min-height: calc(100vh - 70px);
+  width: 80%;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -42,11 +44,17 @@ export const HomeArea = styled.div`
   }
 
   div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     video {
       margin-bottom: -5px;
-      width: 100%;
+      width: 150%;
       height: 100%;
+    }
+    img {
+      display: none;
     }
   }
   @media (max-width: 900px) {
@@ -55,14 +63,29 @@ export const HomeArea = styled.div`
       font-size: 3rem;
     }
     > div {
-      display: flex;
-      align-items: center;
       position: absolute;
       bottom: 0;
-      justify-content: center;
       video {
         width: 200%;
         margin: 0 auto;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    width: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(93, 23, 234, 0) 39%,
+      rgba(93, 23, 234, 0.25) 100%
+    );
+    > div {
+      bottom: 50px;
+      video {
+        display: none;
+      }
+      img {
+        display: block;
+        width: 90%;
       }
     }
   }
