@@ -125,7 +125,7 @@ export const PageEventArea = styled.div`
         padding-bottom: 56.25%;
       }
       .sidebarPlaylist {
-        width: 80%;
+        width: 100%;
         height: 20rem;
         margin: 30px auto 20px;
         min-width: 200px;
