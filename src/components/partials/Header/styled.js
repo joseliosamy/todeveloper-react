@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+
 import ui from '../../../helpers/ui.json';
 
 const { colorSchemma } = ui;
@@ -44,7 +45,7 @@ export const HeaderArea = styled.header`
             align-items: center;
             justify-content: center;
             font-size: 0.9rem;
-            color: ${colorSchemma.textHeaderColor};
+            color: ${colorSchemma.colorTerciary};
             font-weight: 600;
             transition: 180ms;
             position: relative;
@@ -54,7 +55,7 @@ export const HeaderArea = styled.header`
               height: 1px;
               display: flex;
               justify-content: center;
-              background-color: ${colorSchemma.textHeaderOne};
+              background-color: ${colorSchemma.colorSecondary};
               position: absolute;
               bottom: 0;
               transition: 100ms ease-out;
@@ -66,9 +67,9 @@ export const HeaderArea = styled.header`
               }
             }
             &:focus {
-              color: ${colorSchemma.textHeaderOne};
+              color: ${colorSchemma.colorSecondary};
               ::after {
-                background-color: ${colorSchemma.textHeaderOne};
+                background-color: ${colorSchemma.colorSecondary};
               }
             }
           }
@@ -87,8 +88,8 @@ export const HeaderArea = styled.header`
       font-size: 0.9rem;
       transition: 180ms;
       &:hover {
-        color: ${colorSchemma.textHeaderOne};
-        border-color: ${colorSchemma.textHeaderOne};
+        color: ${colorSchemma.colorSecondary};
+        border-color: ${colorSchemma.colorSecondary};
         background-color: #23163f;
       }
     }
@@ -130,7 +131,7 @@ export const HeaderArea = styled.header`
           cursor: pointer;
           width: 100%;
           .rows {
-            fill: ${colorSchemma.textHeaderColor};
+            fill: ${colorSchemma.colorTerciary};
             transition: 100ms ease;
           }
         }

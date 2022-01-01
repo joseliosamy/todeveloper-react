@@ -3,13 +3,7 @@
 
   "colorSchemma": {
     "colorPrimary": "#000",
-    "textHeaderColor": "#bbbbbb",
-    "textHeaderOne":"#5d17ea"
-  },
-  "header":{
-    "icons":{
-      "colorPrimary":"#5d17ea",
-      "colorSecondary":"#bbb"
-    }
+    "colorSecondary":"#5d17ea",
+    "colorTerciary": "#bbbbbb"
   }
 }

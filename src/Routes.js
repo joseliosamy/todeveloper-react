@@ -9,6 +9,7 @@ import Home from './pages/Home';
 // pages
 import About from './pages/Sobre';
 import Events from './pages/Eventos';
+import PageEvent from './pages/PageEvento';
 
 function Routes() {
   return (
@@ -22,6 +23,10 @@ function Routes() {
 
       <Route exact path="/eventos">
         <Events />
+      </Route>
+
+      <Route exact path="/eventos/*">
+        <PageEvent />
       </Route>
 
       <Route exact path="/ferramentas">

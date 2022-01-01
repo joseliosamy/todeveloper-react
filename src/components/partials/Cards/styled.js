@@ -21,6 +21,7 @@ export const CardList = styled.div`
     position: relative;
     overflow: hidden;
     transition: 200ms ease;
+    text-decoration: none;
     .cardBanner {
       width: 100%;
       img {
@@ -43,7 +44,7 @@ export const CardList = styled.div`
       h2 {
         font-size: 1.1rem;
         padding-top: 8px;
-        color: ${colorSchemma.textHeaderColor};
+        color: ${colorSchemma.colorTerciary};
         z-index: 1;
         text-align: center;
       }
@@ -56,8 +57,8 @@ export const CardList = styled.div`
         transition: 200ms ease;
         text-align: center;
         &:hover {
-          background-color: ${colorSchemma.textHeaderOne};
-          box-shadow: 0 0 15px ${colorSchemma.textHeaderOne};
+          background-color: ${colorSchemma.colorSecondary};
+          box-shadow: 0 0 15px ${colorSchemma.colorSecondary};
         }
         &:active {
           background-color: #7336ec;
@@ -72,7 +73,7 @@ export const CardList = styled.div`
     } */
     &:hover {
       transform: scale(1.1, 1.1);
-      box-shadow: 0 0 5px ${colorSchemma.textHeaderOne};
+      box-shadow: 0 0 5px ${colorSchemma.colorSecondary};
     }
   }
   @media (max-width: 900px) {

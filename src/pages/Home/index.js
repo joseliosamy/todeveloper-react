@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { HomeArea } from './styled';
+
 import bannerMP4 from '../../images/banner.mp4';
+import bannerPNG from '../../images/banner.png';
 
 function Home() {
   return (
@@ -13,6 +15,7 @@ function Home() {
           <video autoPlay muted playsInline loop>
             <source src={bannerMP4}></source>
           </video>
+          <img src={bannerPNG} alt="banner" />
         </div>
       </HomeArea>
     </>

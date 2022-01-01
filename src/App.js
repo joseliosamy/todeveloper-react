@@ -1,7 +1,7 @@
 // Utilities
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes';
-import { Site, Delimiters } from './components/MainComponets';
+import { Site } from './components/MainComponets';
 
 // Partial components
 import Header from './components/partials/Header';
@@ -13,9 +13,7 @@ function App() {
     <BrowserRouter>
       <Site>
         <Header />
-        <Delimiters>
-          <Routes />
-        </Delimiters>
+        <Routes />
       </Site>
     </BrowserRouter>
   );
