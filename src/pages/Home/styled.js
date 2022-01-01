@@ -7,10 +7,9 @@ export const HomeArea = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  justify-content: end;
   animation: fade_in 0.7s ease-in-out;
   position: relative;
-  align-items: center;
-  justify-content: end;
   h1 {
     font-size: 4rem;
     text-align: center;
@@ -49,9 +48,9 @@ export const HomeArea = styled.div`
     justify-content: center;
     width: 100%;
     video {
-      margin-bottom: -5px;
       width: 150%;
       height: 100%;
+      max-height: 350px;
     }
     img {
       display: none;
@@ -79,7 +78,7 @@ export const HomeArea = styled.div`
       rgba(93, 23, 234, 0.25) 100%
     );
     > div {
-      bottom: 50px;
+      bottom: 65px;
       video {
         display: none;
       }

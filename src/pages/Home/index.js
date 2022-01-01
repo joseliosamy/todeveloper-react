@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { HomeArea } from './styled';
 
@@ -6,9 +6,6 @@ import bannerMP4 from '../../images/banner.mp4';
 import bannerPNG from '../../images/banner.png';
 
 function Home() {
-  // eslint-disable-next-line no-unused-vars
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  // const [modifyBanner, setModifyBanner] = useState('');
   return (
     <>
       <HomeArea>
