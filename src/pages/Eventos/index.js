@@ -4,7 +4,7 @@ import { EventsArea } from './styled';
 import Cards from '../../components/partials/Cards';
 import { Delimiters } from '../../components/MainComponets';
 
-function Eventos() {
+function Eventos(props) {
   return (
     <EventsArea>
       <section className="apresentation">
@@ -17,7 +17,7 @@ function Eventos() {
         </div>
       </section>
       <Delimiters>
-        <Cards />
+        <Cards date={props.date} loading={props.loading} />
       </Delimiters>
     </EventsArea>
   );

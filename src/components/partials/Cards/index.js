@@ -1,22 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
 import { Link } from 'react-router-dom';
 
 import { CardList } from './styled';
 import CardsLoading from '../Loading/CardsLoading';
 
-function Cards() {
-  const [loading, setLoading] = useState(true);
-  const [date, setDate] = useState([]);
-
-  useEffect(() => {
-    fetch('https://api-todeveloper.vercel.app/events')
-      .then((res) => res.json())
-      .then((json) => setDate(json))
-      .catch(() => console.log('erro'))
-      .finally(() => setLoading(false));
-  }, []);
-
+function Cards(props) {
+  var date = props.date;
   return (
     <>
       <CardList>
@@ -35,7 +25,7 @@ function Cards() {
           );
         })}
       </CardList>
-      <CardsLoading fetchAPI={loading} />
+      <CardsLoading loading={props.loading} />
     </>
   );
 }

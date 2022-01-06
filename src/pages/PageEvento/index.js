@@ -1,38 +1,23 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
 import { PageEventArea } from './styled';
 import { Delimiters } from '../../components/MainComponets';
 import { Link } from 'react-router-dom';
 
-function PageEvent() {
-  const [events, setEvents] = useState([]);
-  const [eps, setEps] = useState([]);
+function PageEvent(props) {
+  var events = props.date;
+  var eps = [];
+  var idPage = null;
 
-  // eslint-disable-next-line no-unused-vars
   const [currentEp, setCurrentEp] = useState(0);
 
-  useEffect(() => {
+  events.map((item) => {
     let path = window.location.pathname;
-    let idPage = null;
-    fetch('https://api-todeveloper.vercel.app/events')
-      .then((res) => res.json())
-      .then((json) => {
-        //Percorrendo o array e definindo qual será o indice do array utilizado para atribuir valor ao state "events"
-        json.map((item) => {
-          if (path === item.redirectURL) {
-            idPage = item.id;
-            if (idPage === item.id) {
-              setEvents(item);
-              setEps(item.eps);
-            }
-          }
-        });
-      })
-      .catch((error) => console.log(error));
-  }, []);
-
-  console.log(currentEp);
-  console.log(eps);
+    if (path === item.redirectURL) {
+      events = item;
+      eps = item.eps;
+    }
+  });
 
   return (
     <Delimiters>
@@ -67,7 +52,7 @@ function PageEvent() {
                       src={
                         'https://www.youtube.com/embed/' +
                         item.epURL +
-                        '?rel=0&amp;showinfo=0&autoplay=1&&color=white'
+                        '?rel=0&amp;showinfo=0&autoplay=0&&color=white'
                       }
                       title="YouTube video player"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -99,7 +84,9 @@ function PageEvent() {
                 </div>
 
                 <div className="eps">
-                  <a href="#">
+                  <Link
+                    to={window.location.pathname + '/material-complementar'}
+                  >
                     <svg
                       fill="none"
                       height="24"
@@ -116,7 +103,7 @@ function PageEvent() {
                       <line x1="12" x2="12" y1="15" y2="3" />
                     </svg>
                     Material Complementar
-                  </a>
+                  </Link>
                   {eps.map((item, index) => {
                     return (
                       <a
@@ -126,7 +113,15 @@ function PageEvent() {
                           setCurrentEp(e.target.id);
                         }}
                       >
-                        {item.epName}
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          className="circleTemporal"
+                        >
+                          <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2z"></path>
+                        </svg>
+                        {item.epName.substring(10)}
                       </a>
                     );
                   })}

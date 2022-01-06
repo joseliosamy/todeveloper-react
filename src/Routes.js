@@ -1,5 +1,5 @@
 // Utilities
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Switch, Route } from 'react-router-dom';
 
@@ -10,8 +10,20 @@ import Home from './pages/Home';
 import About from './pages/Sobre';
 import Events from './pages/Eventos';
 import PageEvent from './pages/PageEvento';
+import ComplementaryMaterial from './pages/MaterialComplementar';
 
 function Routes() {
+  const [date, setDate] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('https://api-todeveloper.vercel.app/events')
+      .then((res) => res.json())
+      .then((json) => setDate(json))
+      .catch(() => console.log('erro'))
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <Switch>
       <Route exact path="/">
@@ -20,19 +32,18 @@ function Routes() {
       <Route exact path="/sobre">
         <About />
       </Route>
-
       <Route exact path="/eventos">
-        <Events />
+        <Events date={date} loading={loading} />
       </Route>
-
+      <Route exact path="/eventos/*/material-complementar">
+        <ComplementaryMaterial />
+      </Route>
       <Route exact path="/eventos/*">
-        <PageEvent />
+        <PageEvent date={date} />
       </Route>
-
       <Route exact path="/ferramentas">
         Ferramentas
       </Route>
-
       <Route path="*">Erro 404.</Route>
     </Switch>
   );

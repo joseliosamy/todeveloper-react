@@ -53,7 +53,7 @@ export const PageEventArea = styled.div`
       min-width: 20rem;
       margin-left: 35px;
       border-radius: 5px;
-      background-color: #111111;
+      background-color: #11111155;
       position: relative;
       overflow: hidden;
 
@@ -73,10 +73,9 @@ export const PageEventArea = styled.div`
         }
 
         .playlist {
-          flex: 1 1 0%;
-          overflow-y: auto;
+          height: 100%;
           .info {
-            background-color: #66666655;
+            background-color: #66666622;
             border-radius: 5px 5px 0 0;
             padding: 10px 25px;
             h2 {
@@ -86,32 +85,60 @@ export const PageEventArea = styled.div`
           }
           .eps {
             display: flex;
-            height: 100%;
             flex-direction: column;
-            padding: 10px;
+            padding: 0 10px;
+            position: relative;
             a {
+              display: flex;
+              align-items: center;
               color: ${colorSchemma.colorTerciary};
               font-size: 0.9rem;
               font-weight: 500;
-              padding: 7px 0;
+              padding: 7px 14px;
+              position: relative;
               cursor: pointer;
               &:hover {
                 color: #fff;
+                transition: 150ms;
               }
               &:first-child {
                 display: flex;
                 align-items: center;
                 color: #fff;
                 justify-content: center;
-                margin-bottom: 10px;
+                margin: 10px 0;
                 &:hover {
                   background-color: #ffffff11;
                   border-radius: 8px;
+                  transition: 100ms;
                 }
                 svg {
                   margin-right: 5px;
                 }
               }
+              svg.circleTemporal {
+                width: 11px;
+                z-index: 1;
+                position: absolute;
+                left: -3px;
+                margin-right: 5px;
+                fill: #444;
+                transition: 150ms;
+              }
+              &:hover {
+                svg.circleTemporal {
+                  fill: ${colorSchemma.colorSecondary};
+                }
+              }
+            }
+            &:after {
+              content: '';
+              position: absolute;
+              top: 54px;
+              left: 12px;
+              width: 2px;
+              height: calc(100% - 48px);
+              background-color: #444;
             }
           }
         }
@@ -133,12 +160,15 @@ export const PageEventArea = styled.div`
           .playlist {
             .info {
               text-align: center;
-              background-color: #66666655;
             }
             .eps {
               a {
                 padding: 15px;
                 margin: 0;
+              }
+              &:after {
+                top: 66px;
+                height: calc(100% - 64px);
               }
             }
           }
