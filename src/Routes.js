@@ -36,7 +36,7 @@ function Routes() {
         <Events date={date} loading={loading} />
       </Route>
       <Route exact path="/eventos/*/material-complementar">
-        <ComplementaryMaterial />
+        <ComplementaryMaterial date={date} />
       </Route>
       <Route exact path="/eventos/*">
         <PageEvent date={date} />
