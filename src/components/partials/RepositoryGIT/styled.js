@@ -6,6 +6,7 @@ const { colorSchemma } = ui;
 export const DownloadArea = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
@@ -33,6 +34,7 @@ export const DownloadArea = styled.div`
       }
       svg {
         margin-left: 10px;
+        fill: #fff;
       }
     }
   }

@@ -5,9 +5,14 @@ import { Delimiters } from '../../components/MainComponets';
 import { Link } from 'react-router-dom';
 
 import Downloads from '../../components/partials/Downloads';
+import RepositoryGIT from '../../components/partials/RepositoryGIT';
 
 function ComplementaryMaterial(props) {
   var currentEvent = { redirectURL: '/' };
+  // eslint-disable-next-line no-unused-vars
+  var complementaryMaterial;
+  // eslint-disable-next-line no-unused-vars
+  var downloadURL, repositoryGIT, figma, notion;
   const [path, setPath] = useState('');
   const [pathLen, setPathLen] = useState('');
 
@@ -27,6 +32,17 @@ function ComplementaryMaterial(props) {
     } else '';
   });
 
+  if (currentEvent.complementaryMaterial != undefined) {
+    complementaryMaterial = currentEvent.complementaryMaterial;
+
+    complementaryMaterial.map((item) => {
+      if (item.downloadURL) downloadURL = item.downloadURL;
+      else if (item.repositoryGIT) repositoryGIT = item.repositoryGIT;
+      else if (item.figma) figma = item.figma;
+      else if (item.notion) notion = item.notion;
+    });
+  }
+  console.log(repositoryGIT);
   return (
     <Delimiters>
       <ComplementaryMaterialArea>
@@ -62,8 +78,15 @@ function ComplementaryMaterial(props) {
 
           <div>Material Complementar</div>
         </div>
+        {downloadURL != undefined && <Downloads downloadURL={downloadURL} />}
 
-        <Downloads currentEvent={currentEvent} />
+        {repositoryGIT != undefined && (
+          <RepositoryGIT repositoryGit={repositoryGIT} />
+        )}
+
+        {notion != undefined && <p>notion</p>}
+
+        {figma != undefined && <p>figma</p>}
       </ComplementaryMaterialArea>
     </Delimiters>
   );
