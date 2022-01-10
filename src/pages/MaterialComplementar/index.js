@@ -9,9 +9,7 @@ import RepositoryGIT from '../../components/partials/RepositoryGIT';
 
 function ComplementaryMaterial(props) {
   var currentEvent = { redirectURL: '/' };
-  // eslint-disable-next-line no-unused-vars
   var complementaryMaterial;
-  // eslint-disable-next-line no-unused-vars
   var downloadURL, repositoryGIT, figma, notion;
   const [path, setPath] = useState('');
   const [pathLen, setPathLen] = useState('');
@@ -29,7 +27,7 @@ function ComplementaryMaterial(props) {
     if (item.redirectURL === formatedPath) {
       currentEvent = item;
       return;
-    } else '';
+    }
   });
 
   if (currentEvent.complementaryMaterial != undefined) {
@@ -42,7 +40,7 @@ function ComplementaryMaterial(props) {
       else if (item.notion) notion = item.notion;
     });
   }
-  console.log(repositoryGIT);
+
   return (
     <Delimiters>
       <ComplementaryMaterialArea>
