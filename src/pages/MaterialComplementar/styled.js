@@ -3,8 +3,13 @@ export const ComplementaryMaterialArea = styled.div`
   width: 100%;
   .path {
     display: flex;
+    align-items: center;
     padding: 35px 0;
     text-align: center;
+    div {
+      display: flex;
+      align-items: center;
+    }
     a:nth-child(1) {
       color: #acacac;
       font-weight: 600;
