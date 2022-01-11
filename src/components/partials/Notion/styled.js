@@ -3,13 +3,14 @@ import ui from '../../../helpers/ui.json';
 
 const { colorSchemma } = ui;
 
-export const DownloadArea = styled.div`
+export const NotionArea = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
   justify-content: space-between;
-  padding: 15px;
+  padding: 5px 15px;
+  transition: 200ms;
   div {
     width: 100%;
     h3 {

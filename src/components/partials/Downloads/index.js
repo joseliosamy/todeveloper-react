@@ -11,7 +11,7 @@ function Downloads(props) {
           <p>
             Baixe todos os materiais essenciais para acompanhar todo o evento.
           </p>
-          <a href={props.downloadURL}>
+          <a href={props.downloadURL} target="_blank" rel="noreferrer">
             Baixar agora
             <svg
               fill="none"

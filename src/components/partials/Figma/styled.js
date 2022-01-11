@@ -3,7 +3,7 @@ import ui from '../../../helpers/ui.json';
 
 const { colorSchemma } = ui;
 
-export const DownloadArea = styled.div`
+export const FigmaArea = styled.div`
   width: 100%;
   display: flex;
   align-items: center;

@@ -3,13 +3,13 @@ import ui from '../../../helpers/ui.json';
 
 const { colorSchemma } = ui;
 
-export const DownloadArea = styled.div`
+export const RepositoryGITArea = styled.div`
   width: 100%;
   display: flex;
-  flex-direction: row-reverse;
   align-items: center;
   justify-content: space-between;
-  padding: 15px;
+  padding: 45px 15px;
+
   div {
     width: 100%;
     h3 {
@@ -23,6 +23,7 @@ export const DownloadArea = styled.div`
       width: 100%;
       max-width: 480px;
       padding: 15px 0;
+      border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -33,19 +34,33 @@ export const DownloadArea = styled.div`
         background-color: #3f1299;
       }
       svg {
-        margin-left: 10px;
         fill: #fff;
+        margin-left: 10px;
       }
     }
   }
   .image {
     width: 80%;
+    margin-left: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     img {
-      width: 200px;
+      width: 220px;
       object-fit: cover;
+    }
+  }
+  @media (max-width: 600px) {
+    flex-direction: column-reverse;
+
+    div {
+      text-align: center;
+    }
+    .image {
+      margin: 0;
+      img {
+        width: 50%;
+      }
     }
   }
 `;

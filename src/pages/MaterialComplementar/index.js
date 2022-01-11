@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 
 import Downloads from '../../components/partials/Downloads';
 import RepositoryGIT from '../../components/partials/RepositoryGIT';
+import Notion from '../../components/partials/Notion';
+import Figma from '../../components/partials/Figma';
 
 function ComplementaryMaterial(props) {
   var currentEvent = { redirectURL: '/' };
@@ -76,15 +78,16 @@ function ComplementaryMaterial(props) {
 
           <div>Material Complementar</div>
         </div>
-        {downloadURL != undefined && <Downloads downloadURL={downloadURL} />}
 
         {repositoryGIT != undefined && (
-          <RepositoryGIT repositoryGit={repositoryGIT} />
+          <RepositoryGIT repositoryGIT={repositoryGIT} />
         )}
 
-        {notion != undefined && <p>notion</p>}
+        {downloadURL != undefined && <Downloads downloadURL={downloadURL} />}
 
-        {figma != undefined && <p>figma</p>}
+        {notion != undefined && <Notion notion={notion} />}
+
+        {figma != undefined && <Figma figma={figma} />}
       </ComplementaryMaterialArea>
     </Delimiters>
   );

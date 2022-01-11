@@ -15,6 +15,7 @@ export const HeaderArea = styled.header`
   background-color: #00000099;
   nav {
     width: 80%;
+    max-width: 1400px;
     height: 100%;
     margin: 0 auto;
     display: flex;

@@ -15,4 +15,5 @@ export const Site = styled.div`
 export const Delimiters = styled.div`
   width: 80%;
   margin: 0 auto;
+  max-width: 1400px;
 `;
