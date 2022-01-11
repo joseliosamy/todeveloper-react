@@ -42,7 +42,7 @@ function Routes() {
         <PageEvent date={date} />
       </Route>
       <Route exact path="/ferramentas">
-        Ferramentas
+        Em desenvolvimento...
       </Route>
       <Route path="*">Erro 404.</Route>
     </Switch>

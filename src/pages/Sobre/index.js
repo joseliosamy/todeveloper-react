@@ -3,11 +3,7 @@ import React from 'react';
 import { AboutArea } from './styled';
 
 function About() {
-  return (
-    <AboutArea>
-      <p>ok</p>
-    </AboutArea>
-  );
+  return <AboutArea>Em desenvolvimento...</AboutArea>;
 }
 
 export default About;
